@@ -20,7 +20,7 @@ def get_all_the_email(assembly_url)
 		url = page.xpath("/html/body/div[3]/div/div/section/div/article/div[3]/div/table/tbody/tr[#{i}]/td[1]/a/@href")
 		liste[nom] = get_the_email_of_a_d(url.to_s.sub("/", "http://www2.assemblee-nationale.fr/"))
 		system 'clear'
-		puts "              ...LOADING, WAIT PLEASE...                \n" + ("|"*j+" "*(58-j)+"|") + ("\n"+"|"*(n/10)+" "*(58-(n/10))+"|")
+		puts "              ...LOADING, PLEASE WAIT...                \n" + ("|"*j+" "*(58-j)+"|") + ("\n"+"|"*(n/10)+" "*(58-(n/10))+"|")
 		if j == 58
 			j = 0 
 		end
