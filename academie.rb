@@ -13,9 +13,9 @@ end
 
 def get_all_the_email(assembly_url)
 	page = Nokogiri::HTML(open(assembly_url))
-	i = 1 ; j = 0 ; n = 0
+	i = 1 ; j = 0 ; n = 10
 	liste = Hash.new
-	while i <= 577
+	while i <= 576
 		nom = page.xpath("/html/body/div[3]/div/div/section/div/article/div[3]/div/table/tbody/tr[#{i}]/td[1]/a").text
 		url = page.xpath("/html/body/div[3]/div/div/section/div/article/div[3]/div/table/tbody/tr[#{i}]/td[1]/a/@href")
 		liste[nom] = get_the_email_of_a_d(url.to_s.sub("/", "http://www2.assemblee-nationale.fr/"))
